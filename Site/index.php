@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 
-<? require_once "sql.php"; ?>
+<?
+	require_once "sql.php";
+?>
 
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Booze-R-Us</title>
+    <title>GetTrippy</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,12 +56,12 @@
 			<li>
 				<?php
 
-					if($acc_user == "NULL"){
-						include("subpages/forms/toplogin.php");
+					if(isLoggedIn()){
+						$output = "<a href='subpages/logout.php'>Logout from ".getUsername()."</a>";
+						echo $output;
 					}
 					else {
-						$output = "<a href='subpages/logout.php'>Logout from ".$_SESSION['PHP_AUTH_USER']."</a>";
-						echo $output;
+						include("subpages/forms/toplogin.php");
 					}
 				?>
 			</li>

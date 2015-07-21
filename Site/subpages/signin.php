@@ -25,7 +25,6 @@
 
 					if (mysqli_query($conn, $sql)) {
 						//record updated
-						echo "TEST";
 						$_SESSION['PHP_AUTH_USER'] = $row["username"];
 						$_SESSION['PHP_AUTH_SKEY'] = $session_key;
 						
@@ -45,7 +44,7 @@
 	}
 	
 	
-	//redirectTo();
+	redirectTo();
 
 
 ?>

@@ -20,8 +20,8 @@
 			<input type="text" class="form-control" id="regLastNameID" name="regLast" placeholder="" required>
 		  </div>
 		  <div class="form-group">
-			<label for="regEmail">E-mail</label>
-			<input type="email" class="form-control" id="regEmailID" name="regEmail" placeholder="example@domain.com">
+			<label for="regEmail">E-mail*</label>
+			<input type="email" class="form-control" id="regEmailID" name="regEmail" placeholder="example@domain.com" required>
 		  </div>
 		  <input type="submit" class="btn btn-default" value="Submit">
 		</form>
