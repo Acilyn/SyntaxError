@@ -42,8 +42,8 @@
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Places <span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
-				<li><a href="?page=#">Amusement</a></li>
-				<li><a href="?page=#">Museums</a></li>
+				<li><a href="?page=amusement">Amusement</a></li>
+				<li><a href="?page=museum">Museums</a></li>
 			  </ul>
 			</li>
 			<li><a href="?page=contact">Contact Us</a></li>
@@ -87,17 +87,14 @@
 		<?php
 			$page = $_GET['page'];
 			switch($page){
-				case "wine":
-					include("subpages/wine_main.php");
+				case "place":
+					include("subpages/place.php");
 					break;
-				case "caridotw":
-					include("subpages/carishea_drink.php");
+				case "museum":
+					include("subpages/museum.php");
 					break;
-				case "beer":
-					include("subpages/beer_main.php");
-					break;
-				case "liquor":
-					include("subpages/liquor_main.php");
+				case "amusement":
+					include("subpages/amusement.php");
 					break;
 				case "contact":
 					include("subpages/contact.php");
