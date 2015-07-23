@@ -61,5 +61,25 @@
 		$result = mysqli_query($conn, $sql);
 		return $result;
 	}
+	
+	class myPlace {
+		public $picture;
+		public $title;
+		public $description;
+		public $address;
+		public $category;
+		
+		function __construct() {
+			$pResult = getPlace($_GET['place_id']);
+			if($pResult != null && (mysqli_num_rows($pResult) > 0)){
+				$row = mysqli_fetch_assoc($pResult);
+				$this->title = $row["Title"];
+				$this->description = $row["Description"];
+				$this->address = $row["Address"];
+				$this->picture = "subpages/pictures/places/" . $row["picture"];
+				$this->category = $row["Cat_Type"];
+			}
+		}
+	}
 
 ?>
