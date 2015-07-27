@@ -5,8 +5,6 @@
 	$db_database = 'owend2014';
 	$db_username = 'owend2014';
 	$db_password = 'code69red';
-	//$db_database = "owend2014"
-	//$db_tbl_user = "tbl_users";
 	$conn = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
 	
 	if (!$conn) die("Unable to connect to MySQL: " . mysqli_connect_error());
@@ -62,24 +60,50 @@
 		return $result;
 	}
 	
+	function getComments($place_id){
+		global $conn;
+		if(!$conn) return null;
+		$sql = "SELECT "; //WRITE THE SQL STATEMENT
+		$result = mysqli_query($conn, $sql);
+	}
+	
 	class myPlace {
+	    public $id;
 		public $picture;
 		public $title;
 		public $description;
 		public $address;
 		public $category;
+		public $comments;
 		
 		function __construct() {
-			$pResult = getPlace($_GET['place_id']);
+			$pid = $_GET['place_id'];
+			$pResult = getPlace($pid);
 			if($pResult != null && (mysqli_num_rows($pResult) > 0)){
 				$row = mysqli_fetch_assoc($pResult);
+				$this->id = $row["Place_ID"];
 				$this->title = $row["Title"];
 				$this->description = $row["Description"];
 				$this->address = $row["Address"];
 				$this->picture = "subpages/pictures/places/" . $row["picture"];
 				$this->category = $row["Cat_Type"];
 			}
+			$pResult = getComments($pid);
+			if($pResult != null && (mysqli_num_rows($pResult) > 0)){
+				while($row = mysqli_fetch_assoc($pResult)){
+					$comments .= "<div>";
+					$comments .= $row["User"] . " - " $row["CommentTS"]; //User - Timestamp
+					$comments .= "<hr>"; //horizontal bar
+					$comments .= $row["Comment"]; //comments
+					$comments .= "</div>";
+				}
+				
+			}
 		}
 	}
+	
+	
+	
+	
 
 ?>
