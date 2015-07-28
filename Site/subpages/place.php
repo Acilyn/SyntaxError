@@ -12,40 +12,23 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			EMPTY
+			<?php
+				echo "<img src='". $place->picture . "' width=100%>";
+			?>
 		</div>
 		
 		<div class="col-md-4">
 			<?php
-				echo $place->picture . "<br>";
-				echo $place->title . "<br>";
-				echo $place->description . "<br>";
+				echo "<b>" . $place->title . "</b><br>";
+				echo $place->description . "<br><br>";
 				echo $place->address . "<br>";
-				echo $place->category . "<br>";
+				//echo $place->category . "<br>";
 			?>
-		</div>
-		
-		<div class="col-md-4">
-			EMPTY
-		</div>
-	<div>
-</div>
-
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			EMPTY
 		</div>
 		
 		<div class="col-md-4">
 			<?php
-				
+				echo $place->comments;
 			?>
 		</div>
-		
-		<div class="col-md-4">
-			EMPTY
-		</div>
-	<div>
 </div>

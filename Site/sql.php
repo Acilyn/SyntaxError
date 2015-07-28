@@ -92,7 +92,7 @@
 			if($pResult != null && (mysqli_num_rows($pResult) > 0)){
 				while($row = mysqli_fetch_assoc($pResult)){
 					$comments .= "<div>";
-					$comments .= $row["User"] . " - " $row["CommentTS"]; //User - Timestamp
+					$comments .= $row["User"] . " - " . $row["CommentTS"]; //User - Timestamp
 					$comments .= "<hr>"; //horizontal bar
 					$comments .= $row["Comment"]; //comments
 					$comments .= "</div>";
@@ -101,9 +101,4 @@
 			}
 		}
 	}
-	
-	
-	
-	
-
 ?>
