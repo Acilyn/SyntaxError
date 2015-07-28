@@ -60,11 +60,12 @@
 		return $result;
 	}
 	
-	function getComments($place_id){
+	function getRating($place_id){
 		global $conn;
 		if(!$conn) return null;
-		$sql = "SELECT "; //WRITE THE SQL STATEMENT
+		$sql = "SELECT AVG(Rating) as rating FROM tbl_Ratings;"; //WRITE THE SQL STATEMENT
 		$result = mysqli_query($conn, $sql);
+		return $result;
 	}
 	
 	class myPlace {
@@ -74,7 +75,7 @@
 		public $description;
 		public $address;
 		public $category;
-		public $comments;
+		public $rating;
 		
 		function __construct() {
 			$pid = $_GET['place_id'];
@@ -88,16 +89,10 @@
 				$this->picture = "subpages/pictures/places/" . $row["picture"];
 				$this->category = $row["Cat_Type"];
 			}
-			$pResult = getComments($pid);
+			$pResult = getRating($pid);
 			if($pResult != null && (mysqli_num_rows($pResult) > 0)){
-				while($row = mysqli_fetch_assoc($pResult)){
-					$comments .= "<div>";
-					$comments .= $row["User"] . " - " . $row["CommentTS"]; //User - Timestamp
-					$comments .= "<hr>"; //horizontal bar
-					$comments .= $row["Comment"]; //comments
-					$comments .= "</div>";
-				}
-				
+				$row = mysqli_fetch_assoc($pResult);
+				$this->rating = number_format($row["rating"],1);
 			}
 		}
 	}

@@ -6,7 +6,12 @@
 	}
 	
 	function redirectTo(){
+		if(isset($_SESSION['PHP_CURRENT_PAGE'])){
+			header("Location: http://lamp.cse.fau.edu/~owend2014/?page=".$_SESSION['PHP_CURRENT_PAGE']);
+		}
+		else {
 		header("Location: http://lamp.cse.fau.edu/~owend2014/");
+		}
 	}
 	
 	function genRanStr($length = 30) {

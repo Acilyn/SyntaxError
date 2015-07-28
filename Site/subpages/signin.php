@@ -27,6 +27,7 @@
 						//record updated
 						$_SESSION['PHP_AUTH_USER'] = $row["username"];
 						$_SESSION['PHP_AUTH_SKEY'] = $session_key;
+						$_SESSION['PHP_AUTH_USER_ID'] = $row["ID"];
 						
 					} else {
 						//record failed
