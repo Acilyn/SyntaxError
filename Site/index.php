@@ -96,6 +96,9 @@
 				case "amusement":
 					include("subpages/amusement.php");
 					break;
+				case "recover":
+					include("subpages/passwordrecover.php");
+					break;
 				case "contact":
 					include("subpages/contact.php");
 					break;

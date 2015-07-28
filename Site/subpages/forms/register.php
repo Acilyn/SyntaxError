@@ -12,6 +12,10 @@
 			<input type="password" class="form-control" id="regPasswordID" name="regPassword" placeholder="" required>
 		  </div>
 		  <div class="form-group">
+			<label for="regPWCode">Password Recovery Code*</label>
+			<input type="text" class="form-control" id="regPWCodeID" name="regPWCode" placeholder="" required>
+		  </div>
+		  <div class="form-group">
 			<label for="regFirstName">First Name*</label>
 			<input type="text" class="form-control" id="regFirstNameID" name="regFirst" placeholder="" required>
 		  </div>

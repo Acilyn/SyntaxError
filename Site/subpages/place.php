@@ -44,7 +44,7 @@
 		<div class="col-md-4">
 			<?php
 				echo "<b>" . $place->title . "</b><br>";
-				echo "Rating: " . number_format($place->rating,1) . "<br>";
+				echo "Rating: " . $place->rating . "<br>";
 				echo $place->description . "<br><br>";
 				echo $place->address . "<br>";
 				//echo $place->category . "<br>";

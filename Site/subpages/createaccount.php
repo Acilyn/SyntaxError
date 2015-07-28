@@ -12,9 +12,10 @@
 	if (!$conn) die("Unable to connect to MySQL: " . mysqli_connect_error());
 	
 
-	if(isset($_POST["regPassword"]) && isset($_POST["regUserName"]) && isset($_POST["regFirst"]) && isset($_POST["regLast"])){
+	if(isset($_POST["regPassword"]) && isset($_POST["regPWCode"]) && isset($_POST["regUserName"]) && isset($_POST["regFirst"]) && isset($_POST["regLast"])){
 		$username = $_POST["regUserName"];
 		$password = saltAndHash($_POST["regPassword"]);
+		$pw_code = $_POST["regPWCode"];
 		$first = $_POST["regFirst"];
 		$last = $_POST["regLast"];
 		$email = "";
@@ -31,7 +32,7 @@
 			//username exist
 		}else {
 			//username doesn't exist, create account
-			$sql = "INSERT INTO tbl_users (username, password, firstname, lastname, email) VALUES('$username', '$password', '$first', '$last', '$email')";
+			$sql = "INSERT INTO tbl_users (username, password, pw_code, firstname, lastname, email) VALUES('$username', '$password', '$pw_code', '$first', '$last', '$email')";
 
 			if (mysqli_query($conn, $sql)) {
 				

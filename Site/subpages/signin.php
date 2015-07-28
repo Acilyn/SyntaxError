@@ -33,12 +33,12 @@
 						//record failed
 					}
 				}else {
-					//password is wrong
+					$_SESSION['PHP_CURRENT_PAGE'] = "recover";
 					
 				}
 			}		
 		} else {
-			//username doesn't exist
+			$_SESSION['PHP_CURRENT_PAGE'] = "recover";
 		}
 		
 		
