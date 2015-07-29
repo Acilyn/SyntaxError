@@ -2,7 +2,7 @@
 	<div class="col-md-3">
 	</div>
 	<div class="col-md-3">
-		<form action="passwordreset.php" method="post" role="form">
+		<form action="subpages/passwordreset.php" method="post" role="form">
 		  <div class="form-group">
 			<label for="regUserName">Username*</label>
 			<input type="text" class="form-control" id="regUserNameID" name="regUserName" placeholder="" required>
