@@ -63,7 +63,7 @@
 	function getRating($place_id){
 		global $conn;
 		if(!$conn) return null;
-		$sql = "SELECT AVG(Rating) as rating FROM tbl_Ratings;"; //WRITE THE SQL STATEMENT
+		$sql = "SELECT AVG(Rating) as rating FROM tbl_Ratings WHERE Place_ID='$place_id';"; //WRITE THE SQL STATEMENT
 		$result = mysqli_query($conn, $sql);
 		return $result;
 	}
