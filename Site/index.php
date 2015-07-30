@@ -46,9 +46,6 @@
 				<li><a href="?page=museum">Museums</a></li>
 			  </ul>
 			</li>
-			<li><a href="?page=contact">Contact Us</a></li>
-			<li><a href="?page=about">About</a></li>
-			<li><a href="?page=comment">Forum</a></li>
 			<li><a href="?page=register">Register</a></li>
 		  <!--</ul>
 		  <ul class="nav navbar-nav navbar-right">
@@ -77,9 +74,9 @@
 	   <div class="span4">...</div>
 	</div>
 	
-	<div class="container">
+	<div class="container" >
 		<div class="jumbotron">
-			<img src="pics/main_logo.jpg" width="100%">
+			<img src="subpages/pictures/main_logo.jpg" width="100%">
 		</div>
 	</div>
 	
