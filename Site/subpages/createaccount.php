@@ -15,7 +15,7 @@
 	if(isset($_POST["regPassword"]) && isset($_POST["regPWCode"]) && isset($_POST["regUserName"]) && isset($_POST["regFirst"]) && isset($_POST["regLast"])){
 		$username = $_POST["regUserName"];
 		$password = saltAndHash($_POST["regPassword"]);
-		$pw_code = $_POST["regPWCode"];
+		$pw_code = substr($_POST["regPWCode"], 0, 4);
 		$first = $_POST["regFirst"];
 		$last = $_POST["regLast"];
 		$email = "";
